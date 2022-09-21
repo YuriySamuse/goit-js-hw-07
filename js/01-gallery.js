@@ -48,16 +48,26 @@ function onGalleryContainerClick(evt) {
 	// const originalImgEl = evt.target.dataset.source;
 	// console.log(originalImgEl);
 
-	const instance = basicLightbox.create(`
+	const instance = basicLightbox.create(
+		`
     <img src="${evt.target.dataset.source}" wtdth = "800" height = "600"/>
-`);
-	instance.show();
-
-	galleryContainer.addEventListener('keydown', (evt) => {
-		if (evt.code === 'Escape') {
-			instance.close();
+`,
+		{
+			onShow: (instance) => {
+				galleryContainer.addEventListener('keydown', (evt) => {
+					if (evt.code === 'Escape') {
+						return instance.close();
+					}
+				});
+			},
+			onClose: (instance) => {
+				galleryContainer.addEventListener('keydown', (evt) => {
+					if (evt.code === 'Escape') {
+						return instance.close();
+					}
+				});
+			},
 		}
-	});
-
-	// Десь потрібно поставити if на слухача, якщо не відкрите модальне вікно не слухать?
+	);
+	instance.show();
 }
