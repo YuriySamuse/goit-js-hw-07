@@ -20,19 +20,21 @@ function createGalleryMarkup(galleryItems) {
     `}).join('');  
 }
 
-galleryContainer.addEventListener('click', onGalleryContainerClick)
+// galleryContainer.addEventListener('click', onGalleryContainerClick)
 
-function onGalleryContainerClick (evt) {
-    evt.preventDefault()
+// function onGalleryContainerClick (evt) {
+//     evt.preventDefault()
 
-    if(evt.target.nodeName !== "IMG") {
-        return;
-    }
-    console.log('click');
+//     if(evt.target.nodeName !== "IMG") {
+//         return;
+//     }
+//     console.log('click');
 
-    const lightbox = new SimpleLightbox('.gallery a', { 
-        captionsData: 'alt',
-        captionDelay: 250,
-        animationSpeed: 250,
-    });
-}
+    
+// }
+
+const lightbox = new SimpleLightbox('.gallery a', { 
+  captionsData: 'alt',
+  captionDelay: 250,
+  animationSpeed: 250,
+});
