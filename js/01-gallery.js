@@ -56,7 +56,8 @@ galleryContainer.addEventListener("keydown", (evt) => {
     if(evt.code === "Escape") {
         instance.close();
     }
+  });
 
     // Десь потрібно поставити if на слухача, якщо не відкрите модальне вікно не слухать? 
-});
+
 }
