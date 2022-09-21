@@ -38,6 +38,8 @@ function onGalleryContainerClick (evt) {
     //     return;
     // }
 
+    // Це те саме що і нижче, але для себе залишив на память
+
     if(evt.target.nodeName !== "IMG") {
         return;
     }
@@ -54,6 +56,7 @@ galleryContainer.addEventListener("keydown", (evt) => {
     if(evt.code === "Escape") {
         instance.close();
     }
-});
 
+    // Десь потрібно поставити if на слухача, якщо не відкрите модальне вікно не слухать? 
+});
 }
