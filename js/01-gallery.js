@@ -54,14 +54,14 @@ function onGalleryContainerClick(evt) {
 `,
 		{
 			onShow: (instance) => {
-				galleryContainer.addEventListener('keydown', (evt) => {
+				window.addEventListener('keydown', (evt) => {
 					if (evt.code === 'Escape') {
 						return instance.close();
 					}
 				});
 			},
 			onClose: (instance) => {
-				galleryContainer.addEventListener('keydown', (evt) => {
+				window.removeEventListener('keydown', (evt) => {
 					if (evt.code === 'Escape') {
 						return instance.close();
 					}
